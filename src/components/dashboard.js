@@ -9,17 +9,31 @@ export default class Dashboard extends Component {
     constructor(){
         super();
         this.state = {
-            dashboards : []
+            dashboardItemsId : []
         }
     }
 
     componentDidMount(){
 
-        Api.getTheDashboard().then(data =>{
-           this.setState({
-               dashboards: data.dashboardItems
-           })
+        //returning dashboaard object
+        const idd = Api.getTheDashboard().then(data =>{
+            
+           return data.dashboardItems;
+                         
         });
+        
+        //returning dashboardItem id
+        (() => {
+           return idd.then(data =>{
+                
+               this.setState({
+
+                dashboardItemsId : data,
+
+               })
+                
+            })})();
+
     }
 
     render() {
@@ -27,15 +41,13 @@ export default class Dashboard extends Component {
 
         return (
             <div>
-                {
-                    this.state.dashboards.map((h, j) =>{
-                    <p key={j}>{console.log(h)
-                    }</p>
+               {
+                    this.state.dashboardItemsId.map((h,k) =>{
+                        return console.log(h.id);
                     })
-                }
+
+               }
                 <ChartComponent/>
-
-
             </div>
         )
     }

@@ -27,6 +27,19 @@ class Api {
             .catch(error => error)
             .then(response => response.json());
     };
+
+    // getCharts =() =>{
+    //     const chartId = "w0NbkJBeGLP";
+    //     const sFields = 'fields=chart';
+    //     return fetch(`${this.config.baseUrl}/charts`, {
+    //         method : 'GET',
+    //         mode : 'cors',
+    //         credentials : 'include',
+    //         headers
+    //     })
+    //     .then(data => data.json())
+    //     .catch(error => error);
+    // };
 }
 
 export default new Api();
