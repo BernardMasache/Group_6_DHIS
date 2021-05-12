@@ -27,7 +27,7 @@
     },
     "dependencies": {
         "bootstrap": "^4.4.1",
-        "chart.js": "^2.9.3",
+        "chart.js": "^2.9.4",
         "react": "^16.6.0",
         "react-chartjs-2": "^2.8.0",
         "react-dom": "^16.6.0"
